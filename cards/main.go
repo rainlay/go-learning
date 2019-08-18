@@ -5,7 +5,7 @@ import "fmt"
 func main()  {
 	// var card string = "Ace of Spades"
 	//cards := []string{newCard(),newCard()}
-	cards := []string{"Ace of Diamonds",newCard()}
+	cards := deck{"Ace of Diamonds",newCard()}
 	cards = append(cards,"Six of Spades")
 
 	// like php foreach
