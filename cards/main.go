@@ -1,12 +1,9 @@
 package main
 
-func main()  {
+import "fmt"
+
+func main() {
 	cards := newDeck()
-
-	hand, remaingCards := deal(cards, 5)
-
-	hand.print()
-
-	remaingCards.print()
+	fmt.Println(cards.toString())
 }
 
