@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 
@@ -61,4 +63,18 @@ func newDeckFromFile(filename string) deck {
 	s := strings.Split(string(bs), ",") // Ace of Spades, Two of Spades
 
    	return deck(s)
+}
+
+func (d deck) shuffle() {
+
+	source := rand.NewSource(time.Now().UnixNano())
+	r := rand.New(source)
+
+	for index := range d {
+		newPosition := r.Intn(len(d) - 1)
+
+		// change position @ go
+		// looks like always same random result, how to solve it ?
+		d[index], d[newPosition] = d[newPosition], d[index]
+	}
 }
