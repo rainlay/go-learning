@@ -12,7 +12,15 @@ func main()  {
 	//alex := person{"alex", "Anderson"}
 
 	// #2 this is better, clearly and stable
-	alex := person{firstName: "alex", lastName: "Anderson"}
+	//alex := person{firstName: "alex", lastName: "Anderson"}
 
+	// #3 init the empty struct
+	var alex = person{}
+
+	// declare
+	alex.firstName = "Alex"
+	alex.lastName = "Anderson"
 	fmt.Println(alex)
+	// %+v will print all different alex props
+	fmt.Printf("%+v", alex)
 }
