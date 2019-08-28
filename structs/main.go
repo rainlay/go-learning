@@ -39,5 +39,20 @@ func main()  {
 		},
 	}
 
+	fmt.Println(*&gin)
+
+	//ginPointer := &gin
+	// still woring without declare gin is pointer
+	// because the pointerToPerson is pointer type, it will convert to pointer
+	gin.updateName("jimmyexx")
+
 	fmt.Printf("%+v", gin)
+}
+
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
+}
+
+func (p person) print() {
+	fmt.Printf("%+v", p)
 }
