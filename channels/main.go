@@ -28,11 +28,11 @@ func main() {
 
 	for l := range c {
 		// put sleep here will cause main routine block
-		go func() {
+		go func(link string) {
 			time.Sleep(time.Second * 5)
 			// wrong example value reference
-			go checkLink(l, c)
-		}()
+			go checkLink(link, c)
+		}(l)
 	}
 }
 
